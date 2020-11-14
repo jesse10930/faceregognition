@@ -1,6 +1,7 @@
 import React from 'react';
 
 class Signin extends React.Component {
+	// initialize state
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -9,14 +10,17 @@ class Signin extends React.Component {
 		}
 	}
 
+	// set state to entered email
 	onEmailChange = (event) => {
 		this.setState({signInEmail: event.target.value})
 	}
 
+	// set password state to entered password
 	onPasswordChange = (event) => {
 		this.setState({signInPassword: event.target.value})
 	}
 
+	// store user sign in data to backend
 	onSubmitSignIn = () => {
 		fetch('https://lit-mountain-50047.herokuapp.com/signin', {
 			method: 'post',
@@ -28,6 +32,7 @@ class Signin extends React.Component {
 		})
 			.then(response => response.json())
 			.then(user => {
+				// if user id exists, set load user and go to homepage
 				if (user.id) {
 					this.props.loadUser(user);
 					this.props.onRouteChange('home');

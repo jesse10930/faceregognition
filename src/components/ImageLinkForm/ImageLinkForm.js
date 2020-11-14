@@ -2,6 +2,7 @@ import React from 'react';
 import './ImageLinkForm.css';
 
 const ImageLinkForm = ({ onInputChange, onButtonSubmit }) => {
+	// form that accepts image url and has detect button
 	return (
 		<div>
 			<p className='f3'>

@@ -5,6 +5,7 @@ import './Logo.css';
 
 
 const Logo = () => {
+	// brain logo to style page
 	return (
 		<div className='ma4 mt0'>
 			<Tilt className="Tilt br2 shadow-2" options={{ max : 85 }} style={{ height: 150, width: 150 }} >

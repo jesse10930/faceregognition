@@ -1,6 +1,7 @@
 import React from 'react';
 
 const Rank = ({name, entries}) => {
+	// display user's rank, based on number of times detected has ben pressed
 	return (
 		<div>
 			<div className='f3'>

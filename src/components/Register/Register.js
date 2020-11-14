@@ -1,6 +1,7 @@
 import React from 'react';
 
 class Register extends React.Component {
+	// set initial state
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -10,18 +11,22 @@ class Register extends React.Component {
 		}
 	}
 	
+	// set name state on user input
 	onNameChange = (event) => {
 		this.setState({name: event.target.value})
 	}
 	
+	// set email state on user input
 	onEmailChange = (event) => {
 		this.setState({email: event.target.value})
 	}
 
+	// set password state on user input
 	onPasswordChange = (event) => {
 		this.setState({password: event.target.value})
 	}
 
+	// save user input data to backend
 	onSubmitSignIn = () => {
 		fetch('https://lit-mountain-50047.herokuapp.com/register', {
 			method: 'post',
@@ -34,6 +39,7 @@ class Register extends React.Component {
 		})
 			.then(response => response.json())
 			.then(user => {
+				// if user id exists, load user data and go to homepage
 				if (user.id) {
 					this.props.loadUser(user)
 					this.props.onRouteChange('home');
